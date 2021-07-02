@@ -1,0 +1,24 @@
+{
+    "name": "jest-import-meta-example",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "jest": "node --es-module-specifier-resolution=node --experimental-vm-modules node_modules/.bin/jest",
+        "jest:clear": "npm run jest -- --clearCache",
+        "start": "npm run ts-node:esm -- src/index.ts",
+        "test": "npm run jest:clear && jest",
+        "ts-node:esm": "export TS_NODE_PROJECT=tsconfig.app.json && node --es-module-specifier-resolution=node --loader ts-node/esm"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/jest": "26.0.23",
+        "jest": "27.0.6",
+        "ts-jest": "27.0.3",
+        "ts-loader": "9.2.3",
+        "ts-node": "9.1.1",
+        "typescript": "4.3.5"
+    },
+    "type": "module"
+}
